@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Obrero - Tienda El Obrero</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar bg-[#14213D] text-white py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold"><i class="fa-solid fa-gear"></i> Corporacón El Obrero</a>
+      <div class="flex items-center">
+        <div class="hidden md:flex space-x-4">
+          <a href="index.html" class="hover:text-[#FCA311]"><i class="fas fa-home"></i> Inicio </a>
+          <a href="tienda-el-obrero.html" class="hover:text-[#FCA311]"> <i class="fa-solid fa-store"></i> El Obrero</a>
+          <a href="tienda-mega-obrero.html" class="hover:text-[#FCA311]"> <i class="fa-solid fa-shop"></i> Mega Obrero</a>
+          <a href="contacto.html" class="hover:text-[#FCA311]"><i class="fa-solid fa-location-dot"></i> Contacto</a>
+        </div>
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Drawer Menu -->
+  <div id="drawer" class="fixed inset-0 z-40 flex hidden">
+    <div class="fixed inset-0 bg-gray-900 bg-opacity-50 transition-opacity"></div>
+    <div class="relative flex-1 flex flex-col max-w-xs w-full bg-[#14213D]">
+      <div class="absolute top-0 right-0 -mr-12 pt-2">
+        <button id="close-btn" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+        <div class="flex-shrink-0 flex items-center px-4">
+          <a href="index.html" class="text-2xl font-bold text-white"> </a>
+        </div>
+        <nav class="mt-5 px-2 space-y-1">
+          <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#FCA311]"><i class="fas fa-home"></i> Inicio</a>
+          <a href="tienda-el-obrero.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#FCA311]"> <i class="fa-solid fa-store"></i> El Obrero</a>
+          <a href="tienda-mega-obrero.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#FCA311]"> <i class="fa-solid fa-shop"></i> Mega Obrero</a>
+          <a href="contacto.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#FCA311]"><i class="fa-solid fa-location-dot"></i> Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tienda El Obrero section -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold mb-8 text-center">Tienda El Obrero</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <img src="/img/el-obrero.jpeg" alt="Tienda El Obrero" class="mb-4 rounded-lg">
+        </div>
+        <div>
+          <p class="mb-4">Nuestra tienda fundadora y pionera del negocio ferretero en Jocotán. A pesar de sus dimensiones más reducidas, aquí encontrarás un surtido completo de materiales, herramientas y artículos diversos para el hogar y proyectos pequeños.</p>
+          <p class="mb-4">La calidez de su atención ha sido clave en nuestro éxito por más de 30 años.</p>
+          <ul class="mb-4">
+            <li>Fundada en 1990</li>
+            <li>Amplio surtido de materiales y herramientas</li>
+            <li>Atención personalizada</li>
+          </ul>
+          <a href="contacto.html" class="bg-[#FCA311] text-white px-8 py-3 rounded-full hover:bg-[#14213D]">Contáctanos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería de imágenes -->
+  <section class="bg-[#E5E5E5] py-20">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Galería de Imágenes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <img src="img/obrero/imagen1-El-Obrero.jpeg" alt="Imagen 1" class="mb-4 rounded-lg">
+        </div>
+        <div>
+          <img src="img/obrero/imagen2-El-Obrero.jpeg" alt="Imagen 2" class="mb-4 rounded-lg">
+        </div>
+        <div>
+          <img src="img/obrero/imagen3-El-Obrero.jpeg" alt="Imagen 3" class="mb-4 rounded-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-[#14213D] text-white py-8">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <h3 class="text-2xl font-bold mb-2">Corporacón El Obrero</h3>
+        <p>Tu tienda de confianza para materiales de construcción y herramientas.</p>
+      </div>
+      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+        <div class="flex items-center space-x-4">
+          <p class="font-bold">Redes Sociales El Obrero:</p>
+          <a href="https://www.facebook.com/profile.php?id=61558228610765" target="_blank" class="text-white hover:text-[#FCA311]">
+            <i class="fab fa-facebook text-2xl"></i>
+          </a>
+          <a href="https://www.instagram.com/obrerojocotan" target="_blank" class="text-white hover:text-[#FCA311]">
+            <i class="fab fa-instagram text-2xl"></i>
+          </a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <p class="font-bold">Redes Sociales Mega Obrero:</p>
+          <a href="https://www.facebook.com/ferreteriamegaobrero3" target="_blank" class="text-white hover:text-[#FCA311]">
+            <i class="fab fa-facebook text-2xl"></i>
+          </a>
+          <a href="https://www.instagram.com/megaobrero" target="_blank" class="text-white hover:text-[#FCA311]">
+            <i class="fab fa-instagram text-2xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
