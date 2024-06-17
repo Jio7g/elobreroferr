@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corporacón El Obrero - Inicio</title>
+  <title>Corporación El Obrero - Ferretería en Jocotán, Guatemala</title>
+  <meta name="description" content="Corporación El Obrero es tu ferretería de confianza en Jocotán, Chiquimula, Guatemala. Ofrecemos materiales de construcción, herramientas y artículos para el hogar de la más alta calidad.">
+  <meta name="keywords" content="ferretería, materiales de construcción, herramientas, artículos para el hogar, Jocotán, Chiquimula, Guatemala">
+  <link rel="canonical" href="https://www.corporacionelobrero.com/">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
@@ -59,27 +62,29 @@
 <!-- Hero section -->
 <section class="hero bg-[#E5E5E5] py-20 relative overflow-hidden">
   <div class="hero-background absolute inset-0">
-    <img src="img/MegaObrero-edited.jpeg" alt="Mega Obrero" class="absolute object-cover w-full h-full">
-    <img src="img/el-obrero.jpeg" alt="El Obrero" class="absolute object-cover w-full h-full">
+    <img src="img/MegaObrero-edited.jpeg" alt="Mega Obrero Ferretería" class="absolute object-cover w-full h-full">
+    <img src="img/el-obrero.jpeg" alt="El Obrero Ferretería" class="absolute object-cover w-full h-full">
   </div>
   <div class="container mx-auto text-center relative z-10">
     <h1 class="text-4xl font-bold mb-4">Bienvenido a Corporación El Obrero</h1>
-    <p class="text-xl mb-8">Tu tienda de confianza para materiales de construcción y herramientas.</p>
-    <a href="tienda-el-obrero.html" class="bg-[#FCA311] text-white px-8 py-3 rounded-full hover:bg-[#14213D]">Visita El Obrero</a>
+    <p class="text-xl mb-8">Tu ferretería de confianza para <strong>materiales de construcción y herramientas</strong> en Jocotán, Guatemala.</p>
+    <a href="contacto.html" class="bg-[#FCA311] text-white px-8 py-3 rounded-full hover:bg-[#14213D]">Contáctanos</a>
   </div>
 </section>
+
   <!-- Tiendas section -->
-  <section class="tiendas bg-white py-20">
+  <section class="tiendas bg-white py-20" id="tiendas">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center">Nuestras Tiendas</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center">Nuestras Ferreterías</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="tienda bg-[#E5E5E5] p-8 rounded-lg">
           <div class="mb-4 aspect-w-16 aspect-h-9">
             <img src="img/tienda-el-obrero.png" alt="Tienda El Obrero" class="object-cover w-full h-full rounded">
           </div>
           <h3 class="text-2xl font-bold mb-4">El Obrero</h3>
-          <p class="mb-4">Nuestra tienda fundadora y pionera del negocio ferretero en Jocotán. Encontrarás un surtido completo de materiales, herramientas y artículos diversos para el hogar y proyectos pequeños.</p>
-          <a href="tienda-el-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-[#14213D]">Ver más</a>
+          <p class="mb-4">Nuestra ferretería fundadora y pionera del negocio ferretero en Jocotán. Encontrarás un surtido completo de materiales, herramientas y artículos diversos para el hogar y proyectos pequeños.</p>
+          <a href="tienda-el-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-[#14213D]"><i class="fas fa-info-circle"></i> Ver más</a>
+          <a href="https://wa.me/50230446809" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-green"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
         <div class="tienda bg-[#E5E5E5] p-8 rounded-lg">
           <div class="mb-4 aspect-w-16 aspect-h-9">
@@ -87,14 +92,15 @@
           </div>
           <h3 class="text-2xl font-bold mb-4">Mega Obrero</h3>
           <p class="mb-4">En Mega Obrero nos mantenemos fieles a nuestro compromiso de brindar productos ferreteros de la más alta calidad a precios realmente accesibles. Contamos con un servicio de fletes para entregarte los materiales directamente en la obra.</p>
-          <a href="tienda-mega-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-[#14213D]">Ver más</a>
+          <a href="tienda-mega-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-[#14213D]"><i class="fas fa-info-circle"></i> Ver más</a>
+          <a href="https://wa.me/50230210754" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-green"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Servicios section -->
-  <section class="servicios bg-[#E5E5E5] py-20">
+  <section class="servicios bg-[#E5E5E5] py-20" id="servicios">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Nuestros Servicios</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -118,7 +124,7 @@
   </section>
 
   <!-- Marcas section -->
-  <section class="marcas bg-white py-20">
+  <section class="marcas bg-white py-20" id="marcas">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Marcas que Confían en Nosotros</h2>
       <div class="slider-wrapper">
@@ -168,7 +174,7 @@
   <footer class="footer bg-[#14213D] text-white py-8">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
       <div class="mb-4 md:mb-0">
-        <h3 class="text-2xl font-bold mb-2">Corporacón El Obrero</h3>
+        <h3 class="text-2xl font-bold mb-2">Corporación El Obrero</h3>
         <p>Tu tienda de confianza para materiales de construcción y herramientas.</p>
       </div>
       <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">

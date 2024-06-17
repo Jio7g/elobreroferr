@@ -290,3 +290,79 @@
 .footer a:hover {
   color: #FCA311;
 }
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  /* Navbar */
+  .navbar .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Tienda El Obrero y Mega Obrero sections */
+  .bg-white, .bg-[#E5E5E5] {
+    padding: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid div {
+    text-align: center;
+  }
+
+  .grid div:first-child {
+    margin-bottom: 1rem;
+  }
+
+  /* Galería de imágenes */
+  .grid.gap-8 {
+    gap: 1rem;
+  }
+
+  /* Footer */
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer .flex {
+    margin-top: 1rem;
+  }
+}
+
+/* Estilos para las secciones Tienda El Obrero y Mega Obrero */
+.bg-white {
+  padding: 2rem;
+}
+
+.grid div img {
+  transition: transform 0.3s ease;
+}
+
+.grid div:hover img {
+  transform: scale(1.05);
+}
+
+.grid div ul li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .bg-white {
+    padding: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid div {
+    text-align: center;
+  }
+
+  .grid div:first-child {
+    margin-bottom: 1rem;
+  }
+}

@@ -94,4 +94,39 @@ document.addEventListener('DOMContentLoaded', function() {
   closeBtn.addEventListener('click', function() {
     drawer.classList.add('hidden');
   });
+
+  // Animación de scroll para la imagen en Tienda El Obrero
+  const tiendaElObreroSection = document.getElementById('tienda-el-obrero');
+  const imagenElObrero = tiendaElObreroSection.querySelector('.grid div:first-child img');
+
+  if (imagenElObrero) {
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      imagenElObrero.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+    });
+  }
+
+  // Animación de scroll para la imagen en Tienda Mega Obrero
+  const tiendaMegaObreroSection = document.getElementById('tienda-mega-obrero');
+  const imagenMegaObrero = tiendaMegaObreroSection.querySelector('.grid div:first-child img');
+
+  if (imagenMegaObrero) {
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      imagenMegaObrero.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+    });
+  }
+
+    // Animación de hover en los iconos de redes sociales
+  const socialIcons = document.querySelectorAll('.flex.justify-center a');
+
+  socialIcons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+      icon.classList.add('animate-pulse');
+    });
+
+    icon.addEventListener('mouseleave', () => {
+      icon.classList.remove('animate-pulse');
+    });
+  });
   });
