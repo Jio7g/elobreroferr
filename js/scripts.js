@@ -1,88 +1,63 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const initSlider = () => {
-    const imageList = document.querySelector(".slider-wrapper .image-list");
-    const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
-    const sliderScrollbar = document.querySelector(".marcas .slider-scrollbar");
-    const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
-    const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
-  
-    // Handle scrollbar thumb drag
-    scrollbarThumb.addEventListener("mousedown", (e) => {
-      const startX = e.clientX;
-      const thumbPosition = scrollbarThumb.offsetLeft;
-      const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
-  
-      // Update thumb position on mouse move
-      const handleMouseMove = (e) => {
-        const deltaX = e.clientX - startX;
-        const newThumbPosition = thumbPosition + deltaX;
-  
-        // Ensure the scrollbar thumb stays within bounds
-        const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
-        const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
-  
-        scrollbarThumb.style.left = `${boundedPosition}px`;
-        imageList.scrollLeft = scrollPosition;
-      }
-  
-      // Remove event listeners on mouse up
-      const handleMouseUp = () => {
-        document.removeEventListener("mousemove", handleMouseMove);
-        document.removeEventListener("mouseup", handleMouseUp);
-      }
-  
-      // Add event listeners for drag interaction
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-    });
-  
-    // Slide images according to the slide button clicks
-    slideButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const direction = button.id === "prev-slide" ? -1 : 1;
-        const scrollAmount = imageList.clientWidth * direction;
-        imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      });
-    });
-  
-    // Show or hide slide buttons based on scroll position
-    const handleSlideButtons = () => {
-      slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
-      slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-    }
-  
-    // Update scrollbar thumb position based on image scroll
-    const updateScrollThumbPosition = () => {
-      const scrollPosition = imageList.scrollLeft;
-      const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
-      scrollbarThumb.style.left = `${thumbPosition}px`;
-    }
-  
-    // Call these two functions when image list scrolls
-    imageList.addEventListener("scroll", () => {
-      updateScrollThumbPosition();
-      handleSlideButtons();
-    });
-  }
-  
-  window.addEventListener("resize", initSlider);
-  window.addEventListener("load", initSlider);
+  // Inicializar Swiper para el carrusel de imágenes en la sección de Héroe
+  const heroSwiper = new Swiper('.heroSwiper', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    effect: 'fade',
+    speed: 1000,
+    on: {
+      slideChangeTransitionStart: function () {
+        const heroContent = document.querySelector('.hero-content');
+        heroContent.classList.add('animate');
+      },
+      slideChangeTransitionEnd: function () {
+        const heroContent = document.querySelector('.hero-content');
+        heroContent.classList.remove('animate');
+      },
+    },
+  });
 
-  const initHeroBackground = () => {
-    const heroImages = document.querySelectorAll(".hero-background img");
-    let currentImageIndex = 0;
+  // Inicializar Swiper para el carrusel de productos populares
+  const popularProductsSwiper = new Swiper('.popularProductsSwiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
 
-    const changeHeroImage = () => {
-      heroImages[currentImageIndex].style.opacity = 0;
-      currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-      heroImages[currentImageIndex].style.opacity = 1;
-    }
+  // Inicializar Swiper para el carrusel de testimonios
+  const testimonialsSwiper = new Swiper('.testimonialsSwiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
 
-    setInterval(changeHeroImage, 5000);
-  }
+  // Inicializar Swiper para el carrusel de marcas
+  const brandsSwiper = new Swiper('.brandsSwiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+  });
 
-  window.addEventListener("load", initHeroBackground);
-
+  // Manejo del menú desplegable móvil
   const menuBtn = document.getElementById('menu-btn');
   const closeBtn = document.getElementById('close-btn');
   const drawer = document.getElementById('drawer');
@@ -117,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-    // Animación de hover en los iconos de redes sociales
+  // Animación de hover en los iconos de redes sociales
   const socialIcons = document.querySelectorAll('.flex.justify-center a');
 
   socialIcons.forEach(icon => {
@@ -129,4 +104,4 @@ document.addEventListener('DOMContentLoaded', function() {
       icon.classList.remove('animate-pulse');
     });
   });
-  });
+});

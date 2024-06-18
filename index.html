@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corporación El Obrero - Ferretería en Jocotán, Guatemala</title>
-  <meta name="description" content="Corporación El Obrero es tu ferretería de confianza en Jocotán, Chiquimula, Guatemala. Ofrecemos materiales de construcción, herramientas y artículos para el hogar de la más alta calidad.">
-  <meta name="keywords" content="ferretería, materiales de construcción, herramientas, artículos para el hogar, Jocotán, Chiquimula, Guatemala">
+  <title>Corporación El Obrero - Ferretería en Jocotán, Chiquimula.</title>
+  <meta name="description"
+    content="Corporación El Obrero es tu ferretería de confianza en Jocotán, Chiquimula, Guatemala. Ofrecemos materiales de construcción, herramientas y artículos para el hogar de la más alta calidad.">
+  <meta name="keywords"
+    content="ferretería, materiales de construcción, herramientas, artículos para el hogar, Jocotán, Chiquimula, Guatemala">
   <link rel="canonical" href="https://www.corporacionelobrero.com/">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hamburgers@1.2.1/dist/hamburgers.min.css">
 </head>
+
 <body>
   <!-- Navbar -->
-  <nav class="navbar bg-[#14213D] text-white py-4">
+  <nav class="navbar text-white py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold"><i class="fa-solid fa-gear"></i> Corporacón El Obrero </a>
       <div class="flex items-center">
         <div class="hidden md:flex space-x-4">
           <a href="index.html" class="hover:text-[#FCA311]"><i class="fas fa-home"></i> Inicio </a>
-          <a href="tienda-el-obrero.html" class="hover:text-[#FCA311]"> <i class="fa-solid fa-store"></i> El Obrero</a>
-          <a href="tienda-mega-obrero.html" class="hover:text-[#FCA311]"> <i class="fa-solid fa-shop"></i> Mega Obrero</a>
-          <a href="contacto.html" class="hover:text-[#FCA311]"><i class="fa-solid fa-location-dot"></i> Contacto</a>
+          <a href="tienda-el-obrero.html" class="hover:"> <i class="fa-solid fa-store"></i> El Obrero</a>
+          <a href="tienda-mega-obrero.html" class="hover:"> <i class="fa-solid fa-shop"></i> Mega
+            Obrero</a>
+          <a href="contacto.html" class="hover:"><i class="fa-solid fa-location-dot"></i> Contacto</a>
         </div>
         <button id="menu-btn" class="md:hidden focus:outline-none">
           <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
+            <path fill-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
           </svg>
         </button>
       </div>
@@ -36,41 +42,64 @@
   <!-- Drawer Menu -->
   <div id="drawer" class="fixed inset-0 z-40 flex hidden">
     <div class="fixed inset-0 bg-gray-900 bg-opacity-50 transition-opacity"></div>
-    <div class="relative flex-1 flex flex-col max-w-xs w-full bg-[#14213D]">
+    <div class="relative flex-1 flex flex-col max-w-xs w-full">
       <div class="absolute top-0 right-0 -mr-12 pt-2">
-        <button id="close-btn" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+        <button id="close-btn"
+          class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
           <span class="sr-only">Close sidebar</span>
-          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
       <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
         <div class="flex-shrink-0 flex items-center px-4">
-          <a href="index.html" class="text-2xl font-bold text-white"> </a>
+          <a href="index.html" class="text-xl sm:text-2xl font-bold text-white"> </a>
         </div>
         <nav class="mt-5 px-2 space-y-1">
-          <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#FCA311]"><i class="fas fa-home"></i> Inicio</a>
-          <a href="tienda-el-obrero.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#FCA311]"> <i class="fa-solid fa-store"></i> El Obrero</a>
-          <a href="tienda-mega-obrero.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#FCA311]"> <i class="fa-solid fa-shop"></i> Mega Obrero</a>
-          <a href="contacto.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#FCA311]"><i class="fa-solid fa-location-dot"></i> Contacto</a>
+          <a href="index.html"
+            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:"><i
+              class="fas fa-home"></i> Inicio</a>
+          <a href="tienda-el-obrero.html"
+            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:"> <i
+              class="fa-solid fa-store"></i> El Obrero</a>
+          <a href="tienda-mega-obrero.html"
+            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:"> <i
+              class="fa-solid fa-shop"></i> Mega Obrero</a>
+          <a href="contacto.html"
+            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:"><i
+              class="fa-solid fa-location-dot"></i> Contacto</a>
         </nav>
       </div>
     </div>
   </div>
-
-<!-- Hero section -->
-<section class="hero bg-[#E5E5E5] py-20 relative overflow-hidden">
-  <div class="hero-background absolute inset-0">
-    <img src="img/MegaObrero-edited.jpeg" alt="Mega Obrero Ferretería" class="absolute object-cover w-full h-full">
-    <img src="img/el-obrero.jpeg" alt="El Obrero Ferretería" class="absolute object-cover w-full h-full">
-  </div>
-  <div class="container mx-auto text-center relative z-10">
-    <h1 class="text-4xl font-bold mb-4">Bienvenido a Corporación El Obrero</h1>
-    <p class="text-xl mb-8">Tu ferretería de confianza para <strong>materiales de construcción y herramientas</strong> en Jocotán, Guatemala.</p>
-    <a href="contacto.html" class="bg-[#FCA311] text-white px-8 py-3 rounded-full hover:bg-[#14213D]">Contáctanos</a>
-  </div>
-</section>
+  
+  <!-- Hero section -->
+  <section class="hero relative overflow-hidden">
+    <div class="swiper heroSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/MegaObrero-edited.jpeg" alt="Mega Obrero Ferretería" class="object-cover w-full h-full">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/el-obrero.jpeg" alt="El Obrero Ferretería" class="object-cover w-full h-full">
+        </div>
+      </div>
+      <div class="hero-content absolute inset-0 flex items-center justify-center z-10">
+        <div class="container mx-auto text-center px-4">
+          <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+            <h1 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Bienvenido a Corporación El Obrero</h1>
+            <p class="text-base sm:text-xl mb-8 text-white">Tu ferretería de confianza para <strong>materiales de
+                construcción y herramientas</strong> en Jocotán, Chiquimula.</p>
+            <a href="contacto.html"
+              class="bg bg-blue-900 text-white px-4 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-blue-600 transition-colors">¡Comienza
+              tu proyecto hoy!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Tiendas section -->
   <section class="tiendas bg-white py-20" id="tiendas">
@@ -82,42 +111,56 @@
             <img src="img/tienda-el-obrero.png" alt="Tienda El Obrero" class="object-cover w-full h-full rounded">
           </div>
           <h3 class="text-2xl font-bold mb-4">El Obrero</h3>
-          <p class="mb-4">Nuestra ferretería fundadora y pionera del negocio ferretero en Jocotán. Encontrarás un surtido completo de materiales, herramientas y artículos diversos para el hogar y proyectos pequeños.</p>
-          <a href="tienda-el-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-[#14213D]"><i class="fas fa-info-circle"></i> Ver más</a>
-          <a href="https://wa.me/50230446809" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-green"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <p class="mb-4">Nuestra ferretería fundadora y pionera del negocio ferretero en Jocotán. Encontrarás un
+            surtido completo de materiales, herramientas y artículos diversos para el hogar y proyectos pequeños.</p>
+          <a href="tienda-el-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover"><i
+              class="fas fa-info-circle"></i> Ver más</a>
+          <a href="https://wa.me/50230446809" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-green"><i
+              class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
         <div class="tienda bg-[#E5E5E5] p-8 rounded-lg">
           <div class="mb-4 aspect-w-16 aspect-h-9">
             <img src="img/tienda-mega-obrero.png" alt="Tienda Mega Obrero" class="object-cover w-full h-full rounded">
           </div>
           <h3 class="text-2xl font-bold mb-4">Mega Obrero</h3>
-          <p class="mb-4">En Mega Obrero nos mantenemos fieles a nuestro compromiso de brindar productos ferreteros de la más alta calidad a precios realmente accesibles. Contamos con un servicio de fletes para entregarte los materiales directamente en la obra.</p>
-          <a href="tienda-mega-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-[#14213D]"><i class="fas fa-info-circle"></i> Ver más</a>
-          <a href="https://wa.me/50230210754" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-green"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <p class="mb-4">En Mega Obrero nos mantenemos fieles a nuestro compromiso de brindar productos ferreteros de
+            la más alta calidad a precios realmente accesibles. Contamos con un servicio de fletes para entregarte los
+            materiales directamente en la obra.</p>
+          <a href="tienda-mega-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover"><i
+              class="fas fa-info-circle"></i> Ver más</a>
+          <a href="https://wa.me/50230210754" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-green"><i
+              class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
+
   <!-- Servicios section -->
-  <section class="servicios bg-[#E5E5E5] py-20" id="servicios">
+  <section class="servicios py-20" id="servicios">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Nuestros Servicios</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="servicio bg-white p-8 rounded-lg shadow-md">
-          <i class="fas fa-truck text-4xl mb-4 text-[#FCA311]"></i>
+        <div class="servicio bg-white p-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105">
+          <i class="fas fa-truck text-6xl mb-4 "></i>
           <h3 class="text-2xl font-bold mb-4">Servicio de Fletes</h3>
-          <p>Ofrecemos un servicio de fletes para entregarte los materiales directamente en la obra.</p>
+          <p class="mb-4">Ofrecemos un servicio de fletes para entregarte los materiales directamente en la obra.</p>
+          <p>Contamos con vehículos preparados para transportar todo tipo de materiales de construcción de manera segura
+            y eficiente.</p>
         </div>
-        <div class="servicio bg-white p-8 rounded-lg shadow-md">
-          <i class="fas fa-tools text-4xl mb-4 text-[#FCA311]"></i>
+        <div class="servicio bg-white p-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105">
+          <i class="fas fa-tools text-6xl mb-4 "></i>
           <h3 class="text-2xl font-bold mb-4">Herramientas Profesionales</h3>
-          <p>Contamos con una amplia selección de herramientas profesionales de las mejores marcas.</p>
+          <p class="mb-4">Contamos con una amplia selección de herramientas profesionales de las mejores marcas.</p>
+          <p>Nuestro equipo te ayudará a elegir las herramientas adecuadas para tus proyectos y necesidades específicas.
+          </p>
         </div>
-        <div class="servicio bg-white p-8 rounded-lg shadow-md">
-          <i class="fas fa-home text-4xl mb-4 text-[#FCA311]"></i>
+        <div class="servicio bg-white p-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105">
+          <i class="fas fa-home text-6xl mb-4 "></i>
           <h3 class="text-2xl font-bold mb-4">Artículos para el Hogar</h3>
-          <p>Encuentra una gran variedad de artículos para el hogar y proyectos de mejora.</p>
+          <p class="mb-4">Encuentra una gran variedad de artículos para el hogar y proyectos de mejora.</p>
+          <p>Desde accesorios de baño hasta decoración y muebles, tenemos todo lo que necesitas para hacer de tu hogar
+            un lugar acogedor.</p>
         </div>
       </div>
     </div>
@@ -127,72 +170,69 @@
   <section class="marcas bg-white py-20" id="marcas">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Marcas que Confían en Nosotros</h2>
-      <div class="slider-wrapper">
-        <button id="prev-slide" class="slide-button material-symbols-rounded">
-          chevron_left
-        </button>
-        <ul class="image-list">
-          <li class="image-item">
+      <div class="swiper brandsSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
             <div class="image-wrapper">
-              <img src="img/marcas/marca1.jpeg" alt="Marca 1" />
+              <img src="img/marcas/marca1.jpeg" alt="Marca 1" class="mx-auto" />
             </div>
-          </li>
-          <li class="image-item">
+          </div>
+          <div class="swiper-slide">
             <div class="image-wrapper">
-              <img src="img/marcas/Powertech.png" alt="Marca 2" />
+              <img src="img/marcas/Powertech.png" alt="Marca 2" class="mx-auto" />
             </div>
-          </li>
-          <li class="image-item">
+          </div>
+          <div class="swiper-slide">
             <div class="image-wrapper">
-              <img src="img/marcas/stanley-logo.png" alt="Marca 3" />
+              <img src="img/marcas/stanley-logo.png" alt="Marca 3" class="mx-auto" />
             </div>
-          </li>
-          <li class="image-item">
+          </div>
+          <div class="swiper-slide">
             <div class="image-wrapper">
-              <img src="img/marcas/truper-logo-png-2.png" alt="Marca 4" />
+              <img src="img/marcas/truper-logo-png-2.png" alt="Marca 4" class="mx-auto" />
             </div>
-          </li>
-          <li class="image-item">
+          </div>
+          <div class="swiper-slide">
             <div class="image-wrapper">
-              <img src="img/marcas/makita.jpg" alt="Marca 5" />
+              <img src="img/marcas/makita.jpg" alt="Marca 5" class="mx-auto" />
             </div>
-          </li>
-        </ul>
-        <!-- <button id="next-slide" class="slide-button material-symbols-rounded">
-          chevron_right
-        </button> -->
-      </div>
-      <div class="slider-scrollbar">
-        <div class="scrollbar-track">
-          <div class="scrollbar-thumb"></div>
+          </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer bg-[#14213D] text-white py-8">
+  <footer class="footer text-white py-8">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
       <div class="mb-4 md:mb-0">
         <h3 class="text-2xl font-bold mb-2">Corporación El Obrero</h3>
-        <p>Tu tienda de confianza para materiales de construcción y herramientas.</p>
+        <p>Tu ferretería de confianza para materiales de construcción y herramientas.</p>
+        <p class="mt-2"><strong>Dirección Mega Obrero: </strong>Calle Principal, Jocotán, Chiquimula, Guatemala.</p>
+        <p>Teléfono: +502 7946 5734</p>
+        <p class="mt-2"><strong>Dirección El Obrero: </strong>Barrio el cementerio, frente al mercado municipal,
+          Jocotán, Chiquimula, Guatemala.</p>
+        <p>Teléfono: +502 7946 5146</p>
       </div>
       <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
         <div class="flex items-center space-x-4">
           <p class="font-bold">Redes Sociales El Obrero:</p>
-          <a href="https://www.facebook.com/profile.php?id=61558228610765" target="_blank" class="text-white hover:text-[#FCA311]">
+          <a href="https://www.facebook.com/profile.php?id=61558228610765" target="_blank"
+            class="text-white hover:">
             <i class="fab fa-facebook text-2xl"></i>
           </a>
-          <a href="https://www.instagram.com/obrerojocotan" target="_blank" class="text-white hover:text-[#FCA311]">
+          <a href="https://www.instagram.com/obrerojocotan" target="_blank" class="text-white hover:">
             <i class="fab fa-instagram text-2xl"></i>
           </a>
         </div>
         <div class="flex items-center space-x-4">
           <p class="font-bold">Redes Sociales Mega Obrero:</p>
-          <a href="https://www.facebook.com/ferreteriamegaobrero3" target="_blank" class="text-white hover:text-[#FCA311]">
+          <a href="https://www.facebook.com/ferreteriamegaobrero3" target="_blank"
+            class="text-white hover:">
             <i class="fab fa-facebook text-2xl"></i>
           </a>
-          <a href="https://www.instagram.com/megaobrero" target="_blank" class="text-white hover:text-[#FCA311]">
+          <a href="https://www.instagram.com/megaobrero" target="_blank" class="text-white hover:">
             <i class="fab fa-instagram text-2xl"></i>
           </a>
         </div>
@@ -200,7 +240,9 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/scripts.js"></script>
 </body>
+
 </html>

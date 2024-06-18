@@ -12,21 +12,14 @@
 
 /* Hero section */
 .hero {
-  background-color: #E5E5E5;
+  height: 100vh;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.hero-background::after {
+.swiper.heroSwiper::after {
   content: "";
   position: absolute;
   top: 0;
@@ -34,46 +27,61 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero .swiper-slide {
+  height: 100%;
+  position: relative;
   z-index: 2;
 }
 
-.hero-background img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero .swiper-slide img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
 }
 
-.hero-background img:first-child {
-  opacity: 1;
+.hero-content {
+  z-index: 3;
+  text-align: center;
+  padding: 0 2rem;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.hero a {
-  background-color: #FCA311;
-  color: white;
-  transition: background-color 0.3s ease;
-}
+/* Estilos adicionales para responsive */
+@media (max-width: 767px) {
+  .hero {
+    height: auto;
+  }
 
-.hero a:hover {
-  background-color: #14213D;
-}
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bg-black.bg-opacity-50.p-8.rounded-lg {
+    padding: 2rem;
+  }
+} 
 
 /* Tiendas section */
 .tiendas {
@@ -290,16 +298,22 @@
 .footer a:hover {
   color: #FCA311;
 }
-/* Estilos para dispositivos móviles */
+
+/* Estilos generales para dispositivos móviles */
 @media (max-width: 767px) {
-  /* Navbar */
+  /* Ajustes de diseño para el header y la navegación */
   .navbar .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  /* Tienda El Obrero y Mega Obrero sections */
-  .bg-white, .bg-[#E5E5E5] {
+  .navbar a {
+    font-size: 0.9rem;
+  }
+
+  /* Ajustes para las secciones de tiendas y servicios */
+  .tiendas,
+  .servicios {
     padding: 1rem;
   }
 
@@ -315,12 +329,18 @@
     margin-bottom: 1rem;
   }
 
-  /* Galería de imágenes */
-  .grid.gap-8 {
-    gap: 1rem;
+  /* Ajustes para las secciones de carrusel */
+  .popular-products .swiper-slide,
+  .testimonials .swiper-slide,
+  .brandsSwiper .swiper-slide {
+    width: 100%;
   }
 
-  /* Footer */
+  .brandsSwiper .swiper-slide .image-wrapper {
+    height: 80px;
+  }
+
+  /* Ajustes para el pie de página */
   .footer .container {
     flex-direction: column;
     align-items: center;
@@ -332,37 +352,40 @@
   }
 }
 
-/* Estilos para las secciones Tienda El Obrero y Mega Obrero */
-.bg-white {
-  padding: 2rem;
+/* Ajustes adicionales para elementos específicos */
+.tiendas .tienda,
+.servicios .servicio {
+  padding: 1rem;
 }
 
-.grid div img {
-  transition: transform 0.3s ease;
+.tiendas .tienda a,
+.servicios .servicio a {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
 }
 
-.grid div:hover img {
-  transform: scale(1.05);
+.tiendas .tienda img,
+.servicios .servicio img {
+  max-width: 100%;
+  height: auto;
 }
 
-.grid div ul li {
+.tiendas .tienda ul,
+.servicios .servicio ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tiendas .tienda ul li,
+.servicios .servicio ul li {
   margin-bottom: 0.5rem;
 }
 
-@media (max-width: 767px) {
-  .bg-white {
-    padding: 1rem;
-  }
+.slider-wrapper .image-list .image-item {
+  width: 150px;
+}
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .grid div {
-    text-align: center;
-  }
-
-  .grid div:first-child {
-    margin-bottom: 1rem;
-  }
+.slider-scrollbar .scrollbar-thumb {
+  width: 30%;
 }
