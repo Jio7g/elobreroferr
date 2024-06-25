@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Navbar scroll effect
+  const navbar = document.querySelector('.navbar');
+  
+  function toggleNavbarScrolledClass() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  }
+
+  // Check the scroll position when the page is loaded
+  toggleNavbarScrolledClass();
+
+  // Listen for the scroll event
+  window.addEventListener('scroll', toggleNavbarScrolledClass);
+
   // Inicializar Swiper para el carrusel de imágenes en la sección de Héroe
   const heroSwiper = new Swiper('.heroSwiper', {
     loop: true,
@@ -59,20 +76,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Manejo del menú desplegable móvil
   const menuBtn = document.getElementById('menu-btn');
-  const closeBtn = document.getElementById('close-btn');
-  const drawer = document.getElementById('drawer');
+  const closeBtn = document.getElementById('close-menu');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-  menuBtn.addEventListener('click', function() {
-    drawer.classList.remove('hidden');
-  });
+  if (menuBtn && closeBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function() {
+      mobileMenu.classList.add('active');
+    });
 
-  closeBtn.addEventListener('click', function() {
-    drawer.classList.add('hidden');
-  });
+    closeBtn.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+    });
+  }
 
   // Animación de scroll para la imagen en Tienda El Obrero
   const tiendaElObreroSection = document.getElementById('tienda-el-obrero');
-  const imagenElObrero = tiendaElObreroSection.querySelector('.grid div:first-child img');
+  const imagenElObrero = tiendaElObreroSection?.querySelector('.grid div:first-child img');
 
   if (imagenElObrero) {
     window.addEventListener('scroll', () => {
@@ -83,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Animación de scroll para la imagen en Tienda Mega Obrero
   const tiendaMegaObreroSection = document.getElementById('tienda-mega-obrero');
-  const imagenMegaObrero = tiendaMegaObreroSection.querySelector('.grid div:first-child img');
+  const imagenMegaObrero = tiendaMegaObreroSection?.querySelector('.grid div:first-child img');
 
   if (imagenMegaObrero) {
     window.addEventListener('scroll', () => {
