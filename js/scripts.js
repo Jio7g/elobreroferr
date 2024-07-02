@@ -123,4 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
       icon.classList.remove('animate-pulse');
     });
   });
+
+  
 });

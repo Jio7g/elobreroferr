@@ -179,26 +179,30 @@
 }
 
 /* Servicios section */
-.servicios {
+.background-section {
   background-color: #E5E5E5;
 }
 
-.servicios h2 {
+.background-section h2 {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.servicios .servicio {
+.background-section .servicio {
   background-color: white;
 }
 
-.servicios .servicio i {
+.background-section .servicio i {
   color: #FCA311;
 }
 
-.servicios .servicio h3 {
+.background-section .servicio h3 {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.background-section .value i{
+  color: #FCA311;
 }
 
 /* Marcas section */

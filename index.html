@@ -1,228 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corporación El Obrero - Ferretería en Jocotán, Chiquimula.</title>
-  <meta name="description"
-    content="Corporación El Obrero es tu ferretería de confianza en Jocotán, Chiquimula, Guatemala. Ofrecemos materiales de construcción, herramientas y artículos para el hogar de la más alta calidad.">
-  <meta name="keywords"
-    content="ferretería, materiales de construcción, herramientas, artículos para el hogar, Jocotán, Chiquimula, Guatemala">
-  <link rel="canonical" href="https://elobreroferr.store/">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hamburgers@1.2.1/dist/hamburgers.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporación El Obrero - Ferretería en Jocotán, Chiquimula.</title>
+    <meta name="description" content="Corporación El Obrero es tu ferretería de confianza en Jocotán, Chiquimula, Guatemala. Ofrecemos materiales de construcción, herramientas y artículos para el hogar de la más alta calidad.">
+    <meta name="keywords" content="ferretería, materiales de construcción, herramientas, artículos para el hogar, Jocotán, Chiquimula, Guatemala">
+    <link rel="canonical" href="https://elobreroferr.store/">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar w-full transition-all duration-300 ease-in-out">
-      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-          <a href="index.html" class="text-xl font-bold text-white flex items-center">
-              <i class="fa-solid fa-gear mr-2"></i>
-              <span class="hidden sm:inline">Corporación El Obrero</span>
-              <span class="sm:hidden">Corporación El Obrero</span>
-          </a>
-          <div class="hidden md:flex space-x-6">
-              <a href="index.html" class="nav-link text-lg"><i class="fas fa-home mr-1"></i>Inicio</a>
-              <a href="tienda-el-obrero.html" class="nav-link text-lg"><i class="fa-solid fa-store mr-1"></i>El Obrero</a>
-              <a href="tienda-mega-obrero.html" class="nav-link text-lg"><i class="fa-solid fa-shop mr-1"></i>Mega Obrero</a>
-              <a href="contacto.html" class="nav-link text-lg"><i class="fa-solid fa-location-dot mr-1"></i>Contacto</a>
-          </div>
-          <button id="menu-btn" class="md:hidden text-white focus:outline-none">
-              <i class="fas fa-bars text-2xl"></i>
-          </button>
-      </div>
-  </nav>
+    <div id="app">
+        <!-- Navbar -->
+        <nav class="navbar w-full transition-all duration-300 ease-in-out">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-white flex items-center">
+                    <i class="fa-solid fa-gear mr-2"></i>
+                    <span class="hidden sm:inline">Corporación El Obrero</span>
+                    <span class="sm:hidden">Corporación El Obrero</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="nav-link text-lg"><i class="fas fa-home mr-1"></i>Inicio</a>
+                    <a href="tienda-el-obrero.html" class="nav-link text-lg"><i class="fa-solid fa-store mr-1"></i>El Obrero</a>
+                    <a href="tienda-mega-obrero.html" class="nav-link text-lg"><i class="fa-solid fa-shop mr-1"></i>Mega Obrero</a>
+                    <a href="contacto.html" class="nav-link text-lg"><i class="fa-solid fa-location-dot mr-1"></i>Contacto</a>
+                </div>
+                <button @click="toggleMobileMenu" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="fixed inset-0 bg-gradient-to-b from-blue-900 to-black z-50 opacity-0 pointer-events-none transition-opacity duration-300">
-  <div class="flex flex-col items-center justify-center h-full">
-    <button id="close-menu" class="absolute top-8 right-4 text-white text-4xl bg-yellow-500 rounded-full w-12 h-12 flex items-center justify-center focus:outline-none transition-transform duration-300 transform scale-0">
-      <i class="fas fa-times"></i>
-    </button>
-    <nav class="text-center space-y-6 mt-24">
-      <a href="index.html" class="block text-white text-2xl hover:text-yellow-500 transition-colors duration-300"><i class="fas fa-home mr-1"></i>Inicio</a>
-      <a href="tienda-el-obrero.html" class="block text-white text-2xl hover:text-yellow-500 transition-colors duration-300"><i class="fa-solid fa-store mr-1"></i>El Obrero</a>
-      <a href="tienda-mega-obrero.html" class="block text-white text-2xl hover:text-yellow-500 transition-colors duration-300"><i class="fa-solid fa-shop mr-1"></i>Mega Obrero</a>
-      <a href="contacto.html" class="block text-white text-2xl hover:text-yellow-500 transition-colors duration-300"><i class="fa-solid fa-location-dot mr-1"></i>Contacto</a>
-    </nav>
-  </div>
-</div>
-  
+        <!-- Mobile Menu -->
+        <div v-if="mobileMenuOpen" class="fixed inset-0 bg-gradient-to-b from-blue-900 to-black z-50 flex items-center justify-center">
+            <div class="text-center">
+                <button @click="toggleMobileMenu" class="absolute top-4 right-4 text-white text-4xl">&times;</button>
+                <a href="index.html" class="block text-white text-2xl py-2" @click="toggleMobileMenu"><i class="fas fa-home mr-1"></i>Inicio</a>
+                <a href="tienda-el-obrero.html" class="block text-white text-2xl py-2" @click="toggleMobileMenu"><i class="fa-solid fa-store mr-1"></i>El Obrero</a>
+                <a href="tienda-mega-obrero.html" class="block text-white text-2xl py-2" @click="toggleMobileMenu"><i class="fa-solid fa-shop mr-1"></i>Mega Obrero</a>
+                <a href="contacto.html" class="block text-white text-2xl py-2" @click="toggleMobileMenu"><i class="fa-solid fa-location-dot mr-1"></i>Contacto</a>
+            </div>
+        </div>
+
 <!-- Wrapper para el contenido principal -->
 <div class="content-wrapper">
-  <!-- Hero section -->
-  <section class="hero relative overflow-hidden">
-    <div class="swiper heroSwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="img/MegaObrero-edited.jpeg" alt="Mega Obrero Ferretería" class="object-cover w-full h-full">
-        </div>
-        <div class="swiper-slide">
-          <img src="img/el-obrero.jpeg" alt="El Obrero Ferretería" class="object-cover w-full h-full">
-        </div>
-      </div>
-      <div class="hero-content absolute inset-0 flex items-center justify-center z-10">
-        <div class="container mx-auto text-center px-4">
-          <div class="bg-black bg-opacity-50 p-8 rounded-lg">
-            <h1 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Bienvenido a Corporación El Obrero</h1>
-            <p class="text-base sm:text-xl mb-8 text-white">Tu ferretería de confianza para <strong>materiales de
-                construcción y herramientas</strong> en Jocotán, Chiquimula.</p>
-            <a href="contacto.html"
-              class="bg bg-blue-900 text-white px-4 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-blue-600 transition-colors">¡Comienza
-              tu proyecto hoy!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tiendas section -->
-  <section class="tiendas bg-white py-20" id="tiendas">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center">Nuestras Ferreterías</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="tienda bg-[#E5E5E5] p-8 rounded-lg">
-          <div class="mb-4 aspect-w-16 aspect-h-9">
-            <img src="img/tienda-el-obrero.png" alt="Tienda El Obrero" class="object-cover w-full h-full rounded">
-          </div>
-          <h3 class="text-2xl font-bold mb-4">El Obrero</h3>
-          <p class="mb-4">Nuestra ferretería fundadora y pionera del negocio ferretero en Jocotán. Encontrarás un
-            surtido completo de materiales, herramientas y artículos diversos para el hogar y proyectos pequeños.</p>
-          <a href="tienda-el-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover"><i
-              class="fas fa-info-circle"></i> Ver más</a>
-          <a href="https://wa.me/50230446809" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-green"><i
-              class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
-        <div class="tienda bg-[#E5E5E5] p-8 rounded-lg">
-          <div class="mb-4 aspect-w-16 aspect-h-9">
-            <img src="img/tienda-mega-obrero.png" alt="Tienda Mega Obrero" class="object-cover w-full h-full rounded">
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Mega Obrero</h3>
-          <p class="mb-4">En Mega Obrero nos mantenemos fieles a nuestro compromiso de brindar productos ferreteros de
-            la más alta calidad a precios realmente accesibles. Contamos con un servicio de fletes para entregarte los
-            materiales directamente en la obra.</p>
-          <a href="tienda-mega-obrero.html" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover"><i
-              class="fas fa-info-circle"></i> Ver más</a>
-          <a href="https://wa.me/50230210754" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-green"><i
-              class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Servicios section -->
-  <section class="servicios py-20" id="servicios">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center">Nuestros Servicios</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="servicio bg-white p-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105">
-          <i class="fas fa-truck text-6xl mb-4 "></i>
-          <h3 class="text-2xl font-bold mb-4">Servicio de Fletes</h3>
-          <p class="mb-4">Ofrecemos un servicio de fletes para entregarte los materiales directamente en la obra.</p>
-          <p>Contamos con vehículos preparados para transportar todo tipo de materiales de construcción de manera segura
-            y eficiente.</p>
-        </div>
-        <div class="servicio bg-white p-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105">
-          <i class="fas fa-tools text-6xl mb-4 "></i>
-          <h3 class="text-2xl font-bold mb-4">Herramientas Profesionales</h3>
-          <p class="mb-4">Contamos con una amplia selección de herramientas profesionales de las mejores marcas.</p>
-          <p>Nuestro equipo te ayudará a elegir las herramientas adecuadas para tus proyectos y necesidades específicas.
-          </p>
-        </div>
-        <div class="servicio bg-white p-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105">
-          <i class="fas fa-home text-6xl mb-4 "></i>
-          <h3 class="text-2xl font-bold mb-4">Artículos para el Hogar</h3>
-          <p class="mb-4">Encuentra una gran variedad de artículos para el hogar y proyectos de mejora.</p>
-          <p>Desde accesorios de baño hasta decoración y muebles, tenemos todo lo que necesitas para hacer de tu hogar
-            un lugar acogedor.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marcas section -->
-  <section class="marcas bg-white py-20" id="marcas">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center">Marcas que Confían en Nosotros</h2>
-      <div class="swiper brandsSwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="image-wrapper">
-              <img src="img/marcas/marca1.jpeg" alt="Marca 1" class="mx-auto" />
+        <!-- Hero section -->
+        <section class="hero relative overflow-hidden">
+            <div class="swiper heroSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/MegaObrero-edited.jpeg" alt="Mega Obrero Ferretería" class="object-cover w-full h-full">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/el-obrero.jpeg" alt="El Obrero Ferretería" class="object-cover w-full h-full">
+                    </div>
+                </div>
+                <div class="hero-content absolute inset-0 flex items-center justify-center z-10">
+                    <div class="container mx-auto text-center px-4">
+                        <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+                            <h1 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Bienvenido a Corporación El Obrero</h1>
+                            <p class="text-base sm:text-xl mb-8 text-white">Tu ferretería de confianza para <strong>materiales de construcción y herramientas</strong> en Jocotán, Chiquimula.</p>
+                            <a href="contacto.html" class="bg-blue-900 text-white px-4 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-blue-600 transition-colors">¡Comienza tu proyecto hoy!</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="image-wrapper">
-              <img src="img/marcas/Powertech.png" alt="Marca 2" class="mx-auto" />
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="image-wrapper">
-              <img src="img/marcas/stanley-logo.png" alt="Marca 3" class="mx-auto" />
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="image-wrapper">
-              <img src="img/marcas/truper-logo-png-2.png" alt="Marca 4" class="mx-auto" />
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="image-wrapper">
-              <img src="img/marcas/makita.jpg" alt="Marca 5" class="mx-auto" />
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- Footer -->
-  <footer class="footer text-white py-8">
-    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-4 md:mb-0">
-        <h3 class="text-2xl font-bold mb-2">Corporación El Obrero</h3>
-        <p>Tu ferretería de confianza para materiales de construcción y herramientas.</p>
-        <p class="mt-2"><strong>Dirección Mega Obrero: </strong>Calle Principal, Jocotán, Chiquimula, Guatemala.</p>
-        <p>Teléfono: +502 7946 5734</p>
-        <p class="mt-2"><strong>Dirección El Obrero: </strong>Barrio el cementerio, frente al mercado municipal,
-          Jocotán, Chiquimula, Guatemala.</p>
-        <p>Teléfono: +502 7946 5146</p>
-      </div>
-      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-        <div class="flex items-center space-x-4">
-          <p class="font-bold">Redes Sociales El Obrero:</p>
-          <a href="https://www.facebook.com/profile.php?id=61558228610765" target="_blank"
-            class="text-white hover:">
-            <i class="fab fa-facebook text-2xl"></i>
-          </a>
-          <a href="https://www.instagram.com/obrerojocotan" target="_blank" class="text-white hover:">
-            <i class="fab fa-instagram text-2xl"></i>
-          </a>
+        <!-- Línea separadora -->
+        <div class="my-0 mx-auto w-5/4">
+            <hr class="border-2 border-gray-300 shadow-lg">
         </div>
-        <div class="flex items-center space-x-4">
-          <p class="font-bold">Redes Sociales Mega Obrero:</p>
-          <a href="https://www.facebook.com/ferreteriamegaobrero3" target="_blank"
-            class="text-white hover:">
-            <i class="fab fa-facebook text-2xl"></i>
-          </a>
-          <a href="https://www.instagram.com/megaobrero" target="_blank" class="text-white hover:">
-            <i class="fab fa-instagram text-2xl"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
+        <!-- Tiendas section -->
+        <section class="tiendas bg-white py-20" id="tiendas">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Nuestras Ferreterías</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div v-for="tienda in tiendas" :key="tienda.nombre" class="tienda bg-[#E5E5E5] p-8 rounded-lg">
+                        <div class="mb-4 aspect-w-16 aspect-h-9">
+                            <img :src="tienda.imagen" :alt="tienda.nombre" class="object-cover w-full h-full rounded">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">{{ tienda.nombre }}</h3>
+                        <p class="mb-4">{{ tienda.descripcion }}</p>
+                        <a :href="tienda.link" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-[#E69100]">
+                            <i class="fas fa-info-circle"></i> Ver más
+                        </a>
+                        <a :href="tienda.whatsapp" class="bg-[#25D366] text-white px-6 py-2 rounded-full hover:bg-[#128C7E]">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Línea separadora -->
+        <div class="my-0 mx-auto w-5/4">
+            <hr class="border-2 border-gray-300 shadow-lg">
+        </div>
+
+        <!-- Servicios section -->
+        <section class="background-section py-20" id="servicios">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Nuestros Servicios</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div v-for="servicio in servicios" :key="servicio.titulo" class="servicio bg-white p-8 rounded-lg shadow-md text-center">
+                        <i :class="servicio.icono + ' text-6xl mb-4'"></i>
+                        <h3 class="text-xl font-semibold mb-2 text-center">{{ servicio.titulo }}</h3>
+                        <p class="mb-3 text-center">{{ servicio.descripcion }}</p>
+                        <p class="mb-3 text-center">{{ servicio.detalle }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Línea separadora -->
+        <div class="my-0 mx-auto w-5/4">
+            <hr class="border-2 border-gray-300 shadow-lg">
+        </div>
+
+        <!-- Nuestros Valores -->
+        <section class="background-section mb-12 py-20" id="servicios">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Nuestros Valores</h2>
+                <div class="grid md:grid-cols-1 md:grid-cols-3 gap-8">
+                    <div v-for="value in companyValues" :key="value.title" class="value bg-white p-4 rounded-lg shadow-md text-center">
+                        <i :class="value.icon + ' text-6xl mb-4'"></i>
+                        <h3 class="text-xl font-semibold mb-2">{{ value.title }}</h3>
+                        <p>{{ value.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marcas section -->
+        <section class="marcas bg-white py-20" id="marcas">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Marcas que Confían en Nosotros</h2>
+                <div class="swiper brandsSwiper">
+                    <div class="swiper-wrapper">
+                        <div v-for="marca in marcas" :key="marca.nombre" class="swiper-slide">
+                            <div class="image-wrapper">
+                                <img :src="marca.imagen" :alt="marca.nombre" class="mx-auto" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Línea separadora -->
+        <div class="my-0 mx-auto w-5/4">
+            <hr class="border-2 border-gray-300 shadow-lg">
+        </div>
+        <!-- Footer -->
+        <footer class="footer text-white py-8">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Corporación El Obrero</h3>
+                    <p>Tu ferretería de confianza para materiales de construcción y herramientas.</p>
+                    <p class="mt-2"><strong>Dirección Mega Obrero: </strong>Calle Principal, Jocotán, Chiquimula, Guatemala.</p>
+                    <p>Teléfono: +502 7946 5734</p>
+                    <p class="mt-2"><strong>Dirección El Obrero: </strong>Barrio el cementerio, frente al mercado municipal, Jocotán, Chiquimula, Guatemala.</p>
+                    <p>Teléfono: +502 7946 5146</p>
+                </div>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+                    <div v-for="tienda in redesSociales" :key="tienda.nombre" class="flex items-center space-x-4">
+                        <p class="font-bold">Redes Sociales {{ tienda.nombre }}:</p>
+                        <a v-for="red in tienda.redes" :key="red.nombre" :href="red.link" target="_blank" class="text-white hover:text-[#FCA311]">
+                            <i :class="red.icono + ' text-2xl'"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/scripts.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/index-app.js"></script>
 </body>
 </html>
