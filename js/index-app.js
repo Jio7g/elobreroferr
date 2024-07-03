@@ -1,11 +1,17 @@
 new Vue({
   el: "#app",
   data: {
+    // Estado del menú móvil
     mobileMenuOpen: false,
+    // Desplazamiento vertical de la página
     offsetY: 0,
+    // Texto para el efecto de máquina de escribir
     typewriterText: "",
+    // Controla la visibilidad del contenido
     showContent: false,
+    // Texto completo para el efecto de máquina de escribir
     fullText: "Bienvenido a Corporación El Obrero",
+    // Array de objetos con información de las tiendas
     tiendas: [
       {
         nombre: "El Obrero",
@@ -24,6 +30,7 @@ new Vue({
         whatsapp: "https://wa.me/50230210754",
       },
     ],
+    // Array de objetos con información de los servicios
     servicios: [
       {
         titulo: "Servicio de Fletes",
@@ -58,6 +65,7 @@ new Vue({
           "Desde cemento y block hasta las mejores herramientas de construcción, tenemos todo lo que necesitas para tus proyectos de construcción y remodelación. Garantizamos productos duraderos y a precios accesibles.",
       },
     ],
+    // Array de objetos con los valores de la empresa
     companyValues: [
       {
         title: "Calidad",
@@ -78,6 +86,7 @@ new Vue({
           "Actuamos con honestidad y transparencia en todo lo que hacemos.",
       },
     ],
+    // Array de objetos con información de las marcas
     marcas: [
       { nombre: "Marca 1", imagen: "img/marcas/marca1.jpeg" },
       { nombre: "Powertech", imagen: "img/marcas/Powertech.png" },
@@ -85,6 +94,7 @@ new Vue({
       { nombre: "Truper", imagen: "img/marcas/truper-logo-png-2.png" },
       { nombre: "Makita", imagen: "img/marcas/makita.jpg" },
     ],
+    // Array de objetos con información de redes sociales
     redesSociales: [
       {
         nombre: "El Obrero",
@@ -119,12 +129,15 @@ new Vue({
     ],
   },
   methods: {
+    // Método para alternar la visibilidad del menú móvil
     toggleMobileMenu() {
       this.mobileMenuOpen = !this.mobileMenuOpen;
     },
+    // Método para manejar el evento de desplazamiento
     handleScroll() {
       this.offsetY = window.pageYOffset;
     },
+    // Método para crear el efecto de máquina de escribir
     typewriterEffect() {
       let i = 0;
       const interval = setInterval(() => {
@@ -136,15 +149,20 @@ new Vue({
         }
       }, 100);
     },
-  },
+  },// Ciclo de vida: cuando el componente se monta en el DOM
   mounted() {
+    // Agregar evento de scroll
     window.addEventListener("scroll", this.handleScroll);
+    // Iniciar efecto de máquina de escribir
     this.typewriterEffect();
+    // Mostrar contenido después de 1 segundo
     setTimeout(() => {
       this.showContent = true;
     }, 1000);
   },
+  // Ciclo de vida: antes de que el componente se destruya
   beforeDestroy() {
+    // Remover evento de scroll para evitar memory leaks
     window.removeEventListener("scroll", this.handleScroll);
   },
 });

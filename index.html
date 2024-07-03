@@ -50,9 +50,15 @@
     <div class="content-wrapper">
         <!-- Hero section -->
         <section class="hero relative overflow-hidden h-screen">
-            <div class="parallax-bg" :style="{ transform: `translateY(${offsetY * 0.5}px)` }">
-                <img src="img/MegaObrero-edited.jpeg" alt="Hero background" class="object-cover w-full h-full">
-            </div>
+            <div class="swiper heroSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="img/MegaObrero-edited.jpeg" alt="Mega Obrero Ferretería" class="object-cover w-full h-full">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/el-obrero.jpeg" alt="El Obrero Ferretería" class="object-cover w-full h-full">
+                  </div>
+                </div>
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
             <div class="hero-content absolute inset-0 flex items-center justify-center z-10">
                 <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center text-white">
@@ -62,7 +68,7 @@
                     <p class="text-xl sm:text-2xl mb-8" :class="{ 'fade-in': showContent }">
                         Tu ferretería de confianza para materiales de construcción y herramientas en Jocotán, Chiquimula.
                     </p>
-                    <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold 
+                    <a href="contacto.html" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold 
                                       hover:bg-blue-700 transition duration-300" 
                        :class="{ 'fade-in': showContent }">
                         ¡Comienza tu proyecto hoy!

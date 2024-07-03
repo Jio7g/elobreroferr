@@ -49,7 +49,7 @@
 }
 
 #close-menu {
-  top: 4rem; /* Ajusta este valor según tus necesidades */
+  top: 4rem;
   transform: scale(0);
   transition: transform 0.3s ease;
 }
@@ -59,30 +59,23 @@
 }
 
 #mobile-menu nav {
-  margin-top: 8rem; /* Ajusta este valor según tus necesidades */
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-  }
-
-  .content-wrapper {
-    padding-top: 50px;
-  }
+  margin-top: 8rem;
 }
 
 /* Hero section */
 .hero {
   height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.swiper.heroSwiper,
+.swiper-wrapper,
+.swiper-slide {
+  height: 100%;
 }
 
 .swiper.heroSwiper::after {
@@ -97,7 +90,6 @@
 }
 
 .hero .swiper-slide {
-  height: 100%;
   position: relative;
   z-index: 2;
 }
@@ -122,38 +114,6 @@
 .hero-content p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-}
-
-/* Estilos adicionales para responsive */
-@media (max-width: 767px) {
-  .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-content {
-    padding: 1rem;
-}
-
-.hero-content h1 {
-    font-size: 1.50rem;
-}
-
-.hero-content p {
-    font-size: 1rem;
-}
-
-  .bg-black.bg-opacity-50.p-8.rounded-lg {
-    padding: 2rem;
-  }
-} 
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.5rem; /* Aún más pequeño para pantallas muy pequeñas */
-  }
 }
 
 /* Tiendas section */
@@ -199,17 +159,14 @@
   background-color: white;
 }
 
-.background-section .servicio i {
+.background-section .servicio i,
+.background-section .value i {
   color: #FCA311;
 }
 
 .background-section .servicio h3 {
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-.background-section .value i{
-  color: #FCA311;
 }
 
 /* Marcas section */
@@ -222,7 +179,7 @@
   font-weight: bold;
 }
 
-/* Estilos para el Image Slider */
+/* Image Slider */
 .slider-wrapper {
   position: relative;
 }
@@ -274,7 +231,7 @@
 
 .slider-wrapper .image-list .image-item {
   flex: 0 0 auto;
-  width: 200px;
+  width: 150px;
 }
 
 .slider-wrapper .image-list .image-item .image-wrapper {
@@ -320,7 +277,7 @@
   background: #000;
   top: 0;
   bottom: 0;
-  width: 50%;
+  width: 30%;
   height: 100%;
   cursor: grab;
   border-radius: inherit;
@@ -341,7 +298,23 @@
   bottom: -10px;
 }
 
-@media only screen and (max-width: 1023px) {
+/* Footer */
+.footer {
+  background-color: #14213D;
+  color: white;
+}
+
+.footer h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  color: #FCA311;
+}
+
+/* Media queries */
+@media (max-width: 1023px) {
   .slider-wrapper .slide-button {
     display: none !important;
   }
@@ -361,24 +334,19 @@
   }
 }
 
-/* Footer */
-.footer {
-  background-color: #14213D;
-  color: white;
-}
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
 
-.footer h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+  .content-wrapper {
+    padding-top: 50px;
+  }
 
-.footer a:hover {
-  color: #FCA311;
-}
-
-/* Estilos generales para dispositivos móviles */
-@media (max-width: 767px) {
-  /* Ajustes de diseño para el header y la navegación */
   .navbar .container {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -388,7 +356,6 @@
     font-size: 0.9rem;
   }
 
-  /* Ajustes para las secciones de tiendas y servicios */
   .tiendas,
   .servicios {
     padding: 1rem;
@@ -406,7 +373,6 @@
     margin-bottom: 1rem;
   }
 
-  /* Ajustes para las secciones de carrusel */
   .popular-products .swiper-slide,
   .testimonials .swiper-slide,
   .brandsSwiper .swiper-slide {
@@ -417,7 +383,6 @@
     height: 80px;
   }
 
-  /* Ajustes para el pie de página */
   .footer .container {
     flex-direction: column;
     align-items: center;
@@ -429,7 +394,38 @@
   }
 }
 
-/* Ajustes adicionales para elementos específicos */
+@media (max-width: 767px) {
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .bg-black.bg-opacity-50.p-8.rounded-lg {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ajustes adicionales */
 .tiendas .tienda,
 .servicios .servicio {
   padding: 1rem;
@@ -457,12 +453,4 @@
 .tiendas .tienda ul li,
 .servicios .servicio ul li {
   margin-bottom: 0.5rem;
-}
-
-.slider-wrapper .image-list .image-item {
-  width: 150px;
-}
-
-.slider-scrollbar .scrollbar-thumb {
-  width: 30%;
 }
