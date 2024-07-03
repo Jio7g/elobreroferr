@@ -126,6 +126,7 @@
                    <h3 class="text-xl font-semibold mb-2">{{ servicio.titulo }}</h3>
                    <p class="mb-4 descripcion" :class="{ 'expanded': servicio.expandido }">{{ servicio.descripcion }}</p>
                    <p class="detalle" :class="{ 'expanded': servicio.expandido }">{{ servicio.detalle }}</p>
+                   <p class="text-center"><i class="fa-solid fa-chevron-down"></i></p>
                </div>
                 </div>
             </div>
@@ -149,6 +150,7 @@
                         <div class="servicio flip-card-front bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center">
                             <i :class="value.icon + ' text-6xl mb-4 text-blue-600'"></i>
                             <h3 class="text-xl font-semibold">{{ value.title }}</h3>
+                            <p class="text-center px-10"><i class="fa-solid fa-arrows-rotate"></i></p>
                         </div>
                         <div class="flip-card-back bg-blue-600 text-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center">
                             <p>{{ value.description }}</p>
