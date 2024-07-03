@@ -78,14 +78,16 @@
         </section>
 
         <!-- Línea separadora -->
-        <div class="my-0 mx-auto w-5/4">
-            <hr class="border-2 border-gray-300 shadow-lg">
-        </div>
+        <div class="separator-gradient ">
+            <div class="line"></div>
+          </div>
 
         <!-- Tiendas section -->
         <section class="tiendas bg-white py-20" id="tiendas">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Nuestras Ferreterías</h2>
+                <div class="text-center">
+                    <h2 class="section-title">Nuestras Ferreterías</h2>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div v-for="tienda in tiendas" :key="tienda.nombre" class="tienda bg-[#E5E5E5] p-8 rounded-lg">
                         <div class="mb-4 aspect-w-16 aspect-h-9">
@@ -93,10 +95,10 @@
                         </div>
                         <h3 class="text-2xl font-bold mb-4">{{ tienda.nombre }}</h3>
                         <p class="mb-4">{{ tienda.descripcion }}</p>
-                        <a :href="tienda.link" class="bg-[#FCA311] text-white px-6 py-2 rounded-full hover:bg-[#E69100]">
+                        <a :href="tienda.link" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-[#E69100]">
                             <i class="fas fa-info-circle"></i> Ver más
                         </a>
-                        <a :href="tienda.whatsapp" class="bg-[#25D366] text-white px-6 py-2 rounded-full hover:bg-[#128C7E]">
+                        <a :href="tienda.whatsapp" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-[#128C7E]">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
                     </div>
@@ -105,43 +107,59 @@
         </section>
 
         <!-- Línea separadora -->
-        <div class="my-0 mx-auto w-5/4">
-            <hr class="border-2 border-gray-300 shadow-lg">
-        </div>
+        <div class="separator-gradient ">
+            <div class="line"></div>
+          </div>
 
         <!-- Servicios section -->
         <section class="background-section py-20" id="servicios">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Nuestros Servicios</h2>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div v-for="servicio in servicios" :key="servicio.titulo" class="servicio bg-white p-8 rounded-lg shadow-md text-center">
-                        <i :class="servicio.icono + ' text-6xl mb-4'"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-center">{{ servicio.titulo }}</h3>
-                        <p class="mb-3 text-center">{{ servicio.descripcion }}</p>
-                        <p class="mb-3 text-center">{{ servicio.detalle }}</p>
-                    </div>
+                <div class="text-center">
+                    <h2 class="section-title">Nuestros Servicios</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div v-for="(servicio, index) in servicios" :key="index" 
+                    class="servicio bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105"
+                    @mouseenter="expandServicio(index)"
+                    @mouseleave="contraerServicio(index)">
+                   <i :class="servicio.icono + ' text-5xl mb-4 text-blue-600'"></i>
+                   <h3 class="text-xl font-semibold mb-2">{{ servicio.titulo }}</h3>
+                   <p class="mb-4 descripcion" :class="{ 'expanded': servicio.expandido }">{{ servicio.descripcion }}</p>
+                   <p class="detalle" :class="{ 'expanded': servicio.expandido }">{{ servicio.detalle }}</p>
+               </div>
                 </div>
             </div>
         </section>
 
         <!-- Línea separadora -->
-        <div class="my-0 mx-auto w-5/4">
-            <hr class="border-2 border-gray-300 shadow-lg">
-        </div>
+        <!-- <div class="separator-gradient ">
+            <div class="line"></div>
+        </div> -->
 
-        <!-- Nuestros Valores -->
-        <section class="background-section mb-12 py-20" id="servicios">
+    <!-- Nuestros Valores -->
+    <section class="background-section mb-12 py-20" id="valores">
+        <div class="container mx-auto">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Nuestros Valores</h2>
-                <div class="grid md:grid-cols-1 md:grid-cols-3 gap-8">
-                    <div v-for="value in companyValues" :key="value.title" class="value bg-white p-4 rounded-lg shadow-md text-center">
-                        <i :class="value.icon + ' text-6xl mb-4'"></i>
-                        <h3 class="text-xl font-semibold mb-2">{{ value.title }}</h3>
-                        <p>{{ value.description }}</p>
+                <div class="text-center">
+                    <h2 class="section-title">Nuestros Valores</h2>
+                </div>
+            <div class="grid md:grid-cols-1 md:grid-cols-3 gap-12">
+                <div v-for="value in companyValues" :key="value.title" class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="servicio flip-card-front bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center">
+                            <i :class="value.icon + ' text-6xl mb-4 text-blue-600'"></i>
+                            <h3 class="text-xl font-semibold">{{ value.title }}</h3>
+                        </div>
+                        <div class="flip-card-back bg-blue-600 text-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center">
+                            <p>{{ value.description }}</p>
+                            <p class="mt-4 font-semibold">{{ value.additionalInfo }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    
 
         <!-- Marcas section -->
         <section class="marcas bg-white py-20" id="marcas">
@@ -159,10 +177,12 @@
                 </div>
             </div>
         </section>
+
         <!-- Línea separadora -->
-        <div class="my-0 mx-auto w-5/4">
-            <hr class="border-2 border-gray-300 shadow-lg">
+        <div class="separator-gradient ">
+            <div class="line"></div>
         </div>
+
         <!-- Footer -->
         <footer class="footer text-white py-8">
             <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">

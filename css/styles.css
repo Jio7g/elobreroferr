@@ -115,6 +115,23 @@
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
+/*separadores*/
+.separator-gradient {
+  position: relative;
+  height: 4px;
+  background: linear-gradient(to right, rgba(252, 163, 17, 0), #2459D8, rgba(252, 163, 17, 0));
+}
+
+.separator-gradient::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, rgba(20, 33, 61, 0), #14213D, rgba(20, 33, 61, 0));
+  filter: blur(4px);
+}
 
 /* Tiendas section */
 .tiendas {
@@ -136,18 +153,79 @@
 }
 
 .tiendas .tienda a {
-  background-color: #FCA311;
+  background-color: #14213D;
   color: white;
   transition: background-color 0.3s ease;
 }
 
 .tiendas .tienda a:hover {
-  background-color: #14213D;
+  background-color: #2459D8;
+  
+}
+
+/* Estilos base para los títulos de sección */
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14213D; /* Color principal, ajusta según tu paleta */
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  width: 100%; /* Asegura que el título ocupe todo el ancho disponible */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 4px;
+  background: linear-gradient(to right, #2459D8, #14213D); /* Ajusta los colores según tu paleta */
+  transition: width 0.3s ease;
+}
+
+.section-title:hover::after {
+  width: 100%;
+}
+
+/* Animación de entrada para los títulos */
+@keyframes titleAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.section-title {
+  animation: titleAnimation 0.8s ease-out forwards;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .section-title {
+      font-size: 2rem; /* Reduce ligeramente el tamaño de fuente en móviles */
+      margin-left: auto;
+      margin-right: auto;
+      display: block; /* Cambia a block para ocupar todo el ancho */
+      text-align: center;
+  }
+
+  .section-title::after {
+      width: 80%; /* Ajusta el ancho del subrayado en móviles */
+  }
 }
 
 /* Servicios section */
 .background-section {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
 
 .background-section h2 {
@@ -156,17 +234,100 @@
 }
 
 .background-section .servicio {
+  transition: all 0.3s ease;
   background-color: white;
 }
 
+.background-section .servicio:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.background-section .servicio i {
+  transition: all 0.3s ease;
+}
+
+.background-section .servicio:hover i {
+  transform: scale(1.1);
+}
+
+
 .background-section .servicio i,
 .background-section .value i {
-  color: #FCA311;
+  color: #14213D;
 }
 
 .background-section .servicio h3 {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.background-section .servicio .descripcion {
+  /* Aseguramos que la descripción principal siempre sea visible */
+  max-height: none;
+  opacity: 1;
+}
+
+.background-section .servicio .detalle {
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.background-section .servicio .detalle.expanded {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+/* Estilos para la sección de Nuestros Valores */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+  background-color: #ffffff;
+  color: #14213D;
+}
+
+.flip-card-back {
+  background-color: #14213D;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Marcas section */
