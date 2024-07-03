@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       disableOnInteraction: false,
     },
     effect: 'fade',
-    speed: 1000,
+    speed: 1250,
     on: {
       slideChangeTransitionStart: function () {
         const heroContent = document.querySelector('.hero-content');
@@ -123,6 +123,4 @@ document.addEventListener('DOMContentLoaded', function() {
       icon.classList.remove('animate-pulse');
     });
   });
-
-  
 });

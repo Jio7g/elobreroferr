@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
+<div id="app">
         <!-- Navbar -->
         <nav class="navbar w-full transition-all duration-300 ease-in-out">
             <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -46,27 +46,27 @@
             </div>
         </div>
 
-<!-- Wrapper para el contenido principal -->
-<div class="content-wrapper">
+    <!-- Wrapper para el contenido principal -->
+    <div class="content-wrapper">
         <!-- Hero section -->
-        <section class="hero relative overflow-hidden">
-            <div class="swiper heroSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="img/MegaObrero-edited.jpeg" alt="Mega Obrero Ferretería" class="object-cover w-full h-full">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/el-obrero.jpeg" alt="El Obrero Ferretería" class="object-cover w-full h-full">
-                    </div>
-                </div>
-                <div class="hero-content absolute inset-0 flex items-center justify-center z-10">
-                    <div class="container mx-auto text-center px-4">
-                        <div class="bg-black bg-opacity-50 p-8 rounded-lg">
-                            <h1 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Bienvenido a Corporación El Obrero</h1>
-                            <p class="text-base sm:text-xl mb-8 text-white">Tu ferretería de confianza para <strong>materiales de construcción y herramientas</strong> en Jocotán, Chiquimula.</p>
-                            <a href="contacto.html" class="bg-blue-900 text-white px-4 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-blue-600 transition-colors">¡Comienza tu proyecto hoy!</a>
-                        </div>
-                    </div>
+        <section class="hero relative overflow-hidden h-screen">
+            <div class="parallax-bg" :style="{ transform: `translateY(${offsetY * 0.5}px)` }">
+                <img src="img/MegaObrero-edited.jpeg" alt="Hero background" class="object-cover w-full h-full">
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="hero-content absolute inset-0 flex items-center justify-center z-10">
+                <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center text-white">
+                    <h1 class="text-4xl sm:text-6xl font-bold mb-4">
+                        <span class="typewriter">{{ typewriterText }}</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl mb-8" :class="{ 'fade-in': showContent }">
+                        Tu ferretería de confianza para materiales de construcción y herramientas en Jocotán, Chiquimula.
+                    </p>
+                    <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold 
+                                      hover:bg-blue-700 transition duration-300" 
+                       :class="{ 'fade-in': showContent }">
+                        ¡Comienza tu proyecto hoy!
+                    </a>
                 </div>
             </div>
         </section>
@@ -185,5 +185,43 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/index-app.js"></script>
+
+        
+        <style scoped>
+        .parallax-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 120%;
+          z-index: -1;
+        }
+        
+        .typewriter {
+          border-right: 0.1em solid #fff;
+          white-space: nowrap;
+          overflow: hidden;
+          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: #fff }
+        }
+        
+        .fade-in {
+          animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        </style>
 </body>
 </html>

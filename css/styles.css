@@ -127,27 +127,34 @@
 /* Estilos adicionales para responsive */
 @media (max-width: 767px) {
   .hero {
-    height: auto;
-  }
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  .hero-content {
-    padding: 0 1rem;
-  }
+.hero-content {
+    padding: 1rem;
+}
 
-  .hero-content h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
+.hero-content h1 {
+    font-size: 1.50rem;
+}
 
-  .hero-content p {
+.hero-content p {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
+}
 
   .bg-black.bg-opacity-50.p-8.rounded-lg {
     padding: 2rem;
   }
 } 
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5rem; /* Aún más pequeño para pantallas muy pequeñas */
+  }
+}
 
 /* Tiendas section */
 .tiendas {
