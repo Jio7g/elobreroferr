@@ -84,11 +84,22 @@ new Vue({
     ],
     // Array de objetos con información de las marcas
     marcas: [
-      { nombre: "Marca 1", imagen: "img/marcas/marca1.jpeg" },
-      { nombre: "Powertech", imagen: "img/marcas/Powertech.png" },
+      { nombre: "cementos-progreso", imagen: "img/marcas/cementos-progreso.png" },
+      { nombre: "rotoplas", imagen: "img/marcas/rotoplas-logo.webp" },
+      { nombre: "tolsen", imagen: "img/marcas/tolsen-logo.jpg" },
       { nombre: "Stanley", imagen: "img/marcas/stanley-logo.png" },
-      { nombre: "Truper", imagen: "img/marcas/truper-logo-png-2.png" },
-      { nombre: "Makita", imagen: "img/marcas/makita.jpg" },
+      { nombre: "ingco", imagen: "img/marcas/ingco-logo.svg" },
+      { nombre: "Truper", imagen: "img/marcas/truper-logo.png" },
+      { nombre: "Makita", imagen: "img/marcas/makita-logo.webp" },
+      { nombre: "toolcraft", imagen: "img/marcas/toolcraft.svg" },
+      { nombre: "Powertech", imagen: "img/marcas/Powertech.png" },
+      { nombre: "tlc", imagen: "img/marcas/tcl-logo.svg" },
+      { nombre: "eagle", imagen: "img/marcas/eagle-logo.svg" },
+      { nombre: "bellota", imagen: "img/marcas/bellota-logo.svg" },
+      { nombre: "imacasa", imagen: "img/marcas/imacasa-logo.png" },
+      { nombre: "gerfor", imagen: "img/marcas/gerfor-logo.png" },
+      
+
     ],
     // Array de objetos con información de redes sociales
     redesSociales: [

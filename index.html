@@ -48,6 +48,7 @@
 
     <!-- Wrapper para el contenido principal -->
     <div class="content-wrapper">
+        
         <!-- Hero section -->
         <section class="hero relative overflow-hidden h-screen">
             <div class="swiper heroSwiper">
@@ -132,11 +133,6 @@
             </div>
         </section>
 
-        <!-- Línea separadora -->
-        <!-- <div class="separator-gradient ">
-            <div class="line"></div>
-        </div> -->
-
     <!-- Nuestros Valores -->
     <section class="background-section  py-20" id="valores">
         <div class="container mx-auto">
@@ -166,19 +162,24 @@
         <div class="separator-gradient ">
             <div class="line"></div>
         </div>
+
         <!-- Marcas section -->
         <section class="marcas bg-white py-20" id="marcas">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Marcas que Confían en Nosotros</h2>
-                <div class="swiper brandsSwiper">
-                    <div class="swiper-wrapper">
-                        <div v-for="marca in marcas" :key="marca.nombre" class="swiper-slide">
+                <h2 class="section-title">Marcas</h2>
+                <div class="slider-wrapper">
+                    <div class="image-list">
+                        <div v-for="marca in marcas" :key="marca.nombre" class="image-item">
                             <div class="image-wrapper">
-                                <img :src="marca.imagen" :alt="marca.nombre" class="mx-auto" />
+                                <img :src="marca.imagen" :alt="marca.nombre" />
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="slider-scrollbar">
+                    <div class="scrollbar-track">
+                        <div class="scrollbar-thumb"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -188,71 +189,66 @@
             <div class="line"></div>
         </div>
 
-        <!-- Footer -->
-        <footer class="footer text-white py-8">
-            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+    <!-- Footer -->
+    <footer class="footer bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Información de la empresa -->
                 <div class="mb-4 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-2">Corporación El Obrero</h3>
-                    <p>Tu ferretería de confianza para materiales de construcción y herramientas.</p>
-                    <p class="mt-2"><strong>Dirección Mega Obrero: </strong>Calle Principal, Jocotán, Chiquimula, Guatemala.</p>
-                    <p>Teléfono: +502 7946 5734</p>
-                    <p class="mt-2"><strong>Dirección El Obrero: </strong>Barrio el cementerio, frente al mercado municipal, Jocotán, Chiquimula, Guatemala.</p>
-                    <p>Teléfono: +502 7946 5146</p>
+                    <h3 class="text-2xl font-bold mb-4">Corporación El Obrero</h3>
+                    <p class="mb-4">Tu ferretería de confianza para <strong>materiales de construcción y herramientas</strong> en Jocotán, Chiquimula.</p>
                 </div>
-                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-                    <div v-for="tienda in redesSociales" :key="tienda.nombre" class="flex items-center space-x-4">
-                        <p class="font-bold">Redes Sociales {{ tienda.nombre }}:</p>
-                        <a v-for="red in tienda.redes" :key="red.nombre" :href="red.link" target="_blank" class="text-white hover:text-[#FCA311]">
-                            <i :class="red.icono + ' text-2xl'"></i>
-                        </a>
+
+                <!-- Información de contacto El Obrero -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Ferretería El Obrero</h4>
+                    <div class="space-y-2">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Barrio el cementerio, frente al mercado municipal, Jocotán, Chiquimula, Guatemala.</p>
+                        <p><i class="fas fa-phone mr-2"></i> +502 7946 5146</p>
+                    </div>
+                </div>
+
+                <!-- Información de contacto Mega Obrero -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Ferretería Mega Obrero</h4>
+                    <div class="space-y-2">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Calle Principal, Jocotán, Chiquimula, Guatemala.</p>
+                        <p><i class="fas fa-phone mr-2"></i> +502 7946 5734</p>
                     </div>
                 </div>
             </div>
-        </footer>
+
+            <!-- Enlaces rápidos -->
+            <div class="mt-8 border-t border-gray-700 pt-8">
+                <ul class="flex flex-wrap justify-center space-x-4">
+                    <li><a href="index.html" class="hover:text-yellow-500 transition duration-300">Inicio</a></li>
+                    <li><a href="tienda-el-obrero.html" class="hover:text-yellow-500 transition duration-300">El Obrero</a></li>
+                    <li><a href="tienda-mega-obrero.html" class="hover:text-yellow-500 transition duration-300">Mega Obrero</a></li>
+                    <li><a href="contacto.html" class="hover:text-yellow-500 transition duration-300">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="mt-8">
+                <div v-for="tienda in redesSociales" :key="tienda.nombre" class="flex flex-wrap items-center justify-center space-x-4 mb-4">
+                    <p class="font-bold">Redes Sociales {{ tienda.nombre }}:</p>
+                    <a v-for="red in tienda.redes" :key="red.nombre" :href="red.link" target="_blank" class="text-white hover:text-yellow-500 transition duration-300">
+                        <i :class="red.icono + ' text-2xl'"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Derechos de autor -->
+            <div class="text-center mt-8 text-sm">
+                <p>Desarrollado por <a href="https://github.com/Jio7g"> <u>JioDev</u></a> &copy; 2024 Corporación El Obrero. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
     </div>
 </div>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/index-app.js"></script>
-
-        
-        <style scoped>
-        .parallax-bg {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 120%;
-          z-index: -1;
-        }
-        
-        .typewriter {
-          border-right: 0.1em solid #fff;
-          white-space: nowrap;
-          overflow: hidden;
-          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes typing {
-          from { width: 0 }
-          to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-          from, to { border-color: transparent }
-          50% { border-color: #fff }
-        }
-        
-        .fade-in {
-          animation: fadeIn 1s ease-in forwards;
-        }
-        
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        </style>
+<!-- Scripts -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/index-app.js"></script>
 </body>
 </html>

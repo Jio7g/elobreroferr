@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Check the scroll position when the page is loaded
+  // Verifique la posición de desplazamiento cuando se carga la página
   toggleNavbarScrolledClass();
 
   // Listen for the scroll event
   window.addEventListener('scroll', toggleNavbarScrolledClass);
 
-  // Inicializar Swiper para el carrusel de imágenes en la sección de Héroe
+  // Inicializar Swiper para el carrusel de imágenes en la sección de hero
   const heroSwiper = new Swiper('.heroSwiper', {
     loop: true,
     autoplay: {
@@ -122,5 +122,75 @@ document.addEventListener('DOMContentLoaded', function() {
     icon.addEventListener('mouseleave', () => {
       icon.classList.remove('animate-pulse');
     });
+  });
+
+  const imageList = document.querySelector(".image-list");
+  const slideButtons = document.querySelectorAll(".slide-button");
+  const sliderScrollbar = document.querySelector(".slider-scrollbar");
+  const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+
+  let autoScrollInterval;
+  const autoScrollSpeed = 1; // Píxeles para mover por fotograma
+  const autoScrollDelay = 3000; // Milisegundos entre cambios de dirección
+
+  // Función para iniciar el desplazamiento automático
+  const startAutoScroll = () => {
+      let scrollDirection = 1; // 1 para derecha, -1 para izquierda
+      let currentPosition = 0;
+
+      autoScrollInterval = setInterval(() => {
+          currentPosition += autoScrollSpeed * scrollDirection;
+          
+          if (currentPosition >= maxScrollLeft) {
+              scrollDirection = -1;
+              currentPosition = maxScrollLeft;
+          } else if (currentPosition <= 0) {
+              scrollDirection = 1;
+              currentPosition = 0;
+          }
+
+          imageList.scrollLeft = currentPosition;
+          updateScrollThumbPosition();
+          handleSlideButtons();
+      }, 16); // ~60fps
+  };
+
+  // Función para detener el desplazamiento automático
+  const stopAutoScroll = () => {
+      clearInterval(autoScrollInterval);
+  };
+
+  // Iniciar el desplazamiento automático
+  startAutoScroll();
+
+  // Slide images according to the slide button clicks
+  slideButtons.forEach(button => {
+      button.addEventListener("click", () => {
+          stopAutoScroll(); // Stop auto-scroll when user interacts
+          const direction = button.id === "prev-slide" ? -1 : 1;
+          const scrollAmount = imageList.clientWidth * direction;
+          imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+          setTimeout(startAutoScroll, 1000); // Resume auto-scroll after 1 second
+      });
+  });
+
+   // Show or hide slide buttons based on scroll position
+  const handleSlideButtons = () => {
+      slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+      slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+  }
+
+  // Update scrollbar thumb position based on image scroll
+  const updateScrollThumbPosition = () => {
+      const scrollPosition = imageList.scrollLeft;
+      const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+      scrollbarThumb.style.left = `${thumbPosition}px`;
+  }
+
+  // Call these functions when image list scrolls
+  imageList.addEventListener("scroll", () => {
+      updateScrollThumbPosition();
+      handleSlideButtons();
   });
 });
