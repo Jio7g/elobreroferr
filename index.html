@@ -29,22 +29,26 @@
                     <a href="tienda-mega-obrero.html" class="nav-link text-lg"><i class="fa-solid fa-shop mr-1"></i>Mega Obrero</a>
                     <a href="contacto.html" class="nav-link text-lg"><i class="fa-solid fa-location-dot mr-1"></i>Contacto</a>
                 </div>
-                <button @click="toggleMobileMenu" class="md:hidden text-white focus:outline-none">
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </nav>
-
-        <!-- Mobile Menu -->
-        <div v-if="mobileMenuOpen" class="fixed inset-0 bg-gradient-to-b from-blue-900 to-black z-50 flex items-center justify-center">
-            <div class="text-center">
-                <button @click="toggleMobileMenu" class="absolute top-4 right-4 text-white text-4xl">&times;</button>
-                <a href="index.html" class="block text-white text-2xl py-2" @click="toggleMobileMenu"><i class="fas fa-home mr-1"></i>Inicio</a>
-                <a href="tienda-el-obrero.html" class="block text-white text-2xl py-2" @click="toggleMobileMenu"><i class="fa-solid fa-store mr-1"></i>El Obrero</a>
-                <a href="tienda-mega-obrero.html" class="block text-white text-2xl py-2" @click="toggleMobileMenu"><i class="fa-solid fa-shop mr-1"></i>Mega Obrero</a>
-                <a href="contacto.html" class="block text-white text-2xl py-2" @click="toggleMobileMenu"><i class="fa-solid fa-location-dot mr-1"></i>Contacto</a>
-            </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gradient-to-b from-blue-900 to-black z-50 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="flex flex-col items-center justify-center h-full">
+        <button id="close-menu" class="absolute top-8 right-4 text-white text-4xl bg-yellow-500 rounded-full w-12 h-12 flex items-center justify-center focus:outline-none transition-transform duration-300 transform scale-0">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="text-center space-y-6 mt-24">
+            <a href="index.html" class="block text-white text-2xl hover:text-yellow-500 transition-colors duration-300"><i class="fas fa-home mr-1"></i>Inicio</a>
+            <a href="tienda-el-obrero.html" class="block text-white text-2xl hover:text-yellow-500 transition-colors duration-300"><i class="fa-solid fa-store mr-1"></i>El Obrero</a>
+            <a href="tienda-mega-obrero.html" class="block text-white text-2xl hover:text-yellow-500 transition-colors duration-300"><i class="fa-solid fa-shop mr-1"></i>Mega Obrero</a>
+            <a href="contacto.html" class="block text-white text-2xl hover:text-yellow-500 transition-colors duration-300"><i class="fa-solid fa-location-dot mr-1"></i>Contacto</a>
+        </nav>
         </div>
+    </div>
 
     <!-- Wrapper para el contenido principal -->
     <div class="content-wrapper">
