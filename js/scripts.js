@@ -152,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
           imageList.scrollLeft = currentPosition;
           updateScrollThumbPosition();
-          handleSlideButtons();
       }, 16); // ~60fps
   };
 
@@ -174,13 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
           setTimeout(startAutoScroll, 1000); // Resume auto-scroll after 1 second
       });
   });
-
-   // Show or hide slide buttons based on scroll position
-  const handleSlideButtons = () => {
-      slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
-      slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-  }
-
   // Update scrollbar thumb position based on image scroll
   const updateScrollThumbPosition = () => {
       const scrollPosition = imageList.scrollLeft;
@@ -191,6 +183,5 @@ document.addEventListener('DOMContentLoaded', function() {
   // Call these functions when image list scrolls
   imageList.addEventListener("scroll", () => {
       updateScrollThumbPosition();
-      handleSlideButtons();
   });
 });
