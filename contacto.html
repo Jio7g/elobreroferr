@@ -14,9 +14,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 
 <body>
+<div id="app">
     <!-- Navbar -->
     <nav class="navbar w-full transition-all duration-300 ease-in-out">
       <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -58,28 +60,28 @@
   <!-- Información de contacto section -->
   <section class="bg-white py-20">
     <div class="container mx-auto px-4">
-      <h1 class="text-4xl font-bold mb-8 text-center">Contáctanos</h1>
+      <h1 class="section-title">Contáctanos</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-gradient-to-r from-gray-800 to-blue-900 p-8 rounded-lg shadow-lg">
           <div class="bg-white p-6 rounded-lg">
-            <h2 class="text-3xl font-bold mb-4 text-center">El Obrero</h2>
+            <h2 class="section-title">El Obrero</h2>
             <div class="mb-4 text-center">
-              <p class="mb-2">Teléfono: <a href="tel:+50279465146" class="text-[#FCA311] hover:text-[#14213D]">+502 7946
+              <p class="mb-2">Teléfono: <a href="tel:+50279465146" class="">+502 7946
                   5146</a></p>
-              <p class="mb-2">WhatsApp: <a href="https://wa.me/50230446809" class="text-[#FCA311] hover:text-[#14213D]"
+              <p class="mb-2">WhatsApp: <a href="https://wa.me/50230446809" class=""
                   target="_blank" rel="noopener noreferrer">+502 3044 6809</a></p>
             </div>
             <div class="flex justify-center space-x-4 mb-4">
               <a href="https://www.facebook.com/profile.php?id=61558228610765" target="_blank" rel="noopener noreferrer"
-                class="text-[#FCA311] hover:text-[#14213D] transition-colors duration-300">
+                class=" transition-colors duration-300">
                 <i class="fab fa-facebook text-4xl" aria-label="Facebook El Obrero"></i>
               </a>
               <a href="https://www.instagram.com/obrerojocotan" target="_blank" rel="noopener noreferrer"
-                class="text-[#FCA311] hover:text-[#14213D] transition-colors duration-300">
+                class=" transition-colors duration-300">
                 <i class="fab fa-instagram text-4xl" aria-label="Instagram El Obrero"></i>
               </a>
               <a href="mailto:comercialobreroferr@gmail.com"
-                class="text-[#FCA311] hover:text-[#14213D] transition-colors duration-300">
+                class=" transition-colors duration-300">
                 <i class="fas fa-envelope text-4xl" aria-label="Correo El Obrero"></i>
               </a>
             </div>
@@ -90,30 +92,34 @@
                 referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-lg"
                 aria-label="Ubicación de la Ferretería El Obrero en Google Maps"></iframe>
             </div>
-            <p class="mb-2 text-center">Barrio el cementerio, frente al mercado municipal, Jocotán, Chiquimula,
-              Guatemala.</p>
+            <p class="mb-2 text-center">Barrio el cementerio, frente al mercado municipal, Jocotán, Chiquimula, Guatemala.</p>
+            <div class="mt-4 bg-gray-100 p-3 rounded-lg">
+              <h3 class="font-semibold text-lg mb-2">Horario de Atención:</h3>
+              <p>Lunes a Sábado: 7:00 AM - 5:00 PM</p>
+              <p>Domingos: 7:00 AM - 3:00 PM</p>
+            </div>
           </div>
         </div>
         <div class="bg-gradient-to-r from-gray-800 to-blue-900 p-8 rounded-lg shadow-lg">
           <div class="bg-white p-6 rounded-lg">
-            <h2 class="text-3xl font-bold mb-4 text-center">Mega Obrero</h2>
+            <h2 class="section-title">Mega Obrero</h2>
             <div class="mb-4 text-center">
-              <p class="mb-2">Teléfono: <a href="tel:+50279465734" class="text-[#FCA311] hover:text-[#14213D]">+502 7946
+              <p class="mb-2">Teléfono: <a href="tel:+50279465734" class="">+502 7946
                   5734</a></p>
-              <p class="mb-2">WhatsApp: <a href="https://wa.me/50230210754" class="text-[#FCA311] hover:text-[#14213D]"
+              <p class="mb-2">WhatsApp: <a href="https://wa.me/50230210754" class=""
                   target="_blank" rel="noopener noreferrer">+502 3021 0754</a></p>
             </div>
             <div class="flex justify-center space-x-4 mb-4">
               <a href="https://www.facebook.com/ferreteriamegaobrero3" target="_blank" rel="noopener noreferrer"
-                class="text-[#FCA311] hover:text-[#14213D] transition-colors duration-300">
+                class=" transition-colors duration-300">
                 <i class="fab fa-facebook text-4xl" aria-label="Facebook Mega Obrero"></i>
               </a>
               <a href="https://www.instagram.com/megaobrero" target="_blank" rel="noopener noreferrer"
-                class="text-[#FCA311] hover:text-[#14213D] transition-colors duration-300">
+                class=" transition-colors duration-300">
                 <i class="fab fa-instagram text-4xl" aria-label="Instagram Mega Obrero"></i>
               </a>
               <a href="mailto:megaobrero@unicentegt.net"
-                class="text-[#FCA311] hover:text-[#14213D] transition-colors duration-300">
+                class=" transition-colors duration-300">
                 <i class="fas fa-envelope text-4xl" aria-label="Correo Mega Obrero"></i>
               </a>
             </div>
@@ -125,54 +131,84 @@
                 aria-label="Ubicación de la Ferretería Mega Obrero en Google Maps"></iframe>
             </div>
             <p class="mb-2 text-center">Calle Principal, Barrio San Lorenzo, Jocotán, Chiquimula, Guatemala</p>
+            <div class="mt-4 bg-gray-100 p-3 rounded-lg">
+              <h3 class="font-semibold text-lg mb-2">Horario de Atención:</h3>
+              <p>Lunes a Sábado: 7:00 AM - 5:00 PM</p>
+              <p>Domingos: 7:00 AM - 3:00 PM</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- Footer -->
-  <footer class="footer text-white py-8">
-    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-4 md:mb-0">
-        <h3 class="text-2xl font-bold mb-2">Corporación El Obrero</h3>
-        <p>Tu ferretería de confianza para materiales de construcción y herramientas.</p>
-        <p class="mt-2"><strong>Dirección Mega Obrero: </strong>Calle Principal, Jocotán, Chiquimula, Guatemala.</p>
-        <p>Teléfono: +502 7946 5734</p>
-        <p class="mt-2"><strong>Dirección El Obrero: </strong>Barrio el cementerio, frente al mercado municipal,
-          Jocotán, Chiquimula, Guatemala.</p>
-        <p>Teléfono: +502 7946 5146</p>
-      </div>
-      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-        <div class="flex items-center space-x-4">
-          <p class="font-bold">Redes Sociales El Obrero:</p>
-          <a href="https://www.facebook.com/profile.php?id=61558228610765" target="_blank"
-            class="text-white hover:text-[#FCA311]">
-            <i class="fab fa-facebook text-2xl"></i>
-          </a>
-          <a href="https://www.instagram.com/obrerojocotan" target="_blank" class="text-white hover:text-[#FCA311]">
-            <i class="fab fa-instagram text-2xl"></i>
-          </a>
-        </div>
-        <div class="flex items-center space-x-4">
-          <p class="font-bold">Redes Sociales Mega Obrero:</p>
-          <a href="https://www.facebook.com/ferreteriamegaobrero3" target="_blank"
-            class="text-white hover:text-[#FCA311]">
-            <i class="fab fa-facebook text-2xl"></i>
-          </a>
-          <a href="https://www.instagram.com/megaobrero" target="_blank" class="text-white hover:text-[#FCA311]">
-            <i class="fab fa-instagram text-2xl"></i>
-          </a>
-        </div>
-      </div>
+    <!-- Línea separadora -->
+    <div class="separator-gradient ">
+        <div class="line"></div>
     </div>
-  </footer>
 
+   <!-- Footer -->
+   <footer class="footer bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Información de la empresa -->
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-2xl font-bold mb-4">Corporación El Obrero</h3>
+                <p class="mb-4">Tu ferretería de confianza para <strong>materiales de construcción y herramientas</strong> en Jocotán, Chiquimula.</p>
+            </div>
+
+            <!-- Información de contacto El Obrero -->
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Ferretería El Obrero</h4>
+                <div class="space-y-2">
+                    <p><i class="fas fa-map-marker-alt mr-2"></i> Barrio el cementerio, frente al mercado municipal, Jocotán, Chiquimula, Guatemala.</p>
+                    <p><i class="fas fa-phone mr-2"></i> +502 7946 5146</p>
+                </div>
+            </div>
+
+            <!-- Información de contacto Mega Obrero -->
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Ferretería Mega Obrero</h4>
+                <div class="space-y-2">
+                    <p><i class="fas fa-map-marker-alt mr-2"></i> Calle Principal, Jocotán, Chiquimula, Guatemala.</p>
+                    <p><i class="fas fa-phone mr-2"></i> +502 7946 5734</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div class="mt-8 border-t border-gray-700 pt-8">
+            <ul class="flex flex-wrap justify-center space-x-4">
+                <li><a href="index.html" class="hover:text-yellow-500 transition duration-300">Inicio</a></li>
+                <li><a href="tienda-el-obrero.html" class="hover:text-yellow-500 transition duration-300">El Obrero</a></li>
+                <li><a href="tienda-mega-obrero.html" class="hover:text-yellow-500 transition duration-300">Mega Obrero</a></li>
+                <li><a href="contacto.html" class="hover:text-yellow-500 transition duration-300">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="mt-8">
+            <div v-for="tienda in redesSociales" :key="tienda.nombre" class="flex flex-wrap items-center justify-center space-x-4 mb-4">
+                <p class="font-bold">Redes Sociales {{ tienda.nombre }}:</p>
+                <a v-for="red in tienda.redes" :key="red.nombre" :href="red.link" target="_blank" class="text-white hover:text-yellow-500 transition duration-300">
+                    <i :class="red.icono + ' text-2xl'"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Derechos de autor -->
+        <div class="text-center mt-8 text-sm">
+            <p>Desarrollado por <a href="https://github.com/Jio7g"> <u>JioDev</u></a> &copy; 2024 Corporación El Obrero. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/index-app.js"></script>
 </body>
 </html>
